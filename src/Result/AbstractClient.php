@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Result;
 
+use Override;
 use Stringable;
 
 /**
@@ -23,6 +24,7 @@ abstract class AbstractClient implements Stringable
 {
     abstract public function toString(): string;
 
+    #[Override]
     public function __toString(): string
     {
         return $this->toString();

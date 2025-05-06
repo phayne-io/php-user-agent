@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Command;
 
+use Override;
 use Phayne\UAParser\Util\Converter;
 use Phayne\UAParser\Util\Fetcher;
 use Symfony\Component\Console\Command\Command;
@@ -31,6 +32,7 @@ class UpdateCommand extends Command
         parent::__construct('ua-parser:update');
     }
 
+    #[Override]
     protected function configure(): void
     {
         $this
@@ -45,6 +47,7 @@ class UpdateCommand extends Command
         ;
     }
 
+    #[Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $fetcher = new Fetcher();

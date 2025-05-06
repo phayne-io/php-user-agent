@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Command;
 
+use Override;
 use Phayne\UAParser\Parser;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -25,6 +26,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class ParserCommand extends Command
 {
+    #[Override]
     protected function configure(): void
     {
         $this
@@ -38,6 +40,7 @@ class ParserCommand extends Command
         ;
     }
 
+    #[Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $userAgent = $input->getArgument('user-agent');

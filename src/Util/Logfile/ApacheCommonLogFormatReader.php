@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Util\Logfile;
 
+use Override;
+
 /**
  * Class ApacheCommonLogFormatReader
  *
@@ -19,6 +21,7 @@ namespace Phayne\UAParser\Util\Logfile;
  */
 class ApacheCommonLogFormatReader extends AbstractReader
 {
+    #[Override]
     protected function getRegex(): string
     {
         return '@^

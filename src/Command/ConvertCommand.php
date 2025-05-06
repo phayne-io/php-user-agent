@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Command;
 
+use Override;
 use Phayne\UAParser\Util\Converter;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -31,6 +32,7 @@ class ConvertCommand extends Command
         parent::__construct('ua-parser:convert');
     }
 
+    #[Override]
     protected function configure(): void
     {
         $this
@@ -51,6 +53,7 @@ class ConvertCommand extends Command
         ;
     }
 
+    #[Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $file = $input->getArgument('file');

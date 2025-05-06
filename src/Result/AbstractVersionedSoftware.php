@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Result;
 
+use Override;
+
 use function array_filter;
 use function implode;
 
@@ -24,6 +26,7 @@ abstract class AbstractVersionedSoftware extends AbstractSoftware
 {
     abstract public function toVersion(): string;
 
+    #[Override]
     public function toString(): string
     {
         return implode(' ', array_filter([$this->family, $this->toVersion()]));

@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Util\Logfile;
 
+use Override;
 use Phayne\UAParser\Exception\ReaderException;
 
 /**
@@ -45,6 +46,7 @@ abstract class AbstractReader implements ReaderInterface
         return static::$readers;
     }
 
+    #[Override]
     public function test(string $line): bool
     {
         $matches = $this->match($line);
@@ -52,6 +54,7 @@ abstract class AbstractReader implements ReaderInterface
         return isset($matches['userAgentString']);
     }
 
+    #[Override]
     public function read(string $line): string
     {
         $matches = $this->match($line);

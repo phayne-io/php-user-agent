@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Result;
 
+use Override;
+
 /**
  * Class UserAgent
  *
@@ -25,6 +27,7 @@ final class UserAgent extends AbstractVersionedSoftware
 
     public string | int | null $patch = null;
 
+    #[Override]
     public function toVersion(): string
     {
         return $this->formatVersion($this->major, $this->minor, $this->patch);

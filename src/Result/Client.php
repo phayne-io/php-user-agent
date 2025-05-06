@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Result;
 
+use Override;
+
 /**
  * Class Client
  *
@@ -29,6 +31,7 @@ class Client extends AbstractClient
     {
     }
 
+    #[Override]
     public function toString(): string
     {
         return sprintf('%s / %s', $this->ua->toString(), $this->os->toString());

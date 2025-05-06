@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Command;
 
+use Override;
 use Phayne\UAParser\Util\Fetcher;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -33,6 +34,7 @@ class FetchCommand extends Command
         parent::__construct('ua-parser:fetch');
     }
 
+    #[Override]
     protected function configure(): void
     {
         $this
@@ -47,6 +49,7 @@ class FetchCommand extends Command
         ;
     }
 
+    #[Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $file = $input->getArgument('file');

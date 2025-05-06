@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Command;
 
+use Override;
 use Phayne\UAParser\Exception\InvalidArgumentException;
 use Phayne\UAParser\Exception\ReaderException;
 use Phayne\UAParser\Parser;
@@ -46,6 +47,7 @@ use function strlen;
  */
 class LogfileCommand extends Command
 {
+    #[Override]
     protected function configure(): void
     {
         $this
@@ -84,6 +86,7 @@ class LogfileCommand extends Command
             );
     }
 
+    #[Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$input->getOption('log-file') && !$input->getOption('log-dir')) {

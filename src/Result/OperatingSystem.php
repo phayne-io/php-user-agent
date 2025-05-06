@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Result;
 
+use Override;
+
 /**
  * Class OperatingSystem
  *
@@ -27,6 +29,7 @@ final class OperatingSystem extends AbstractVersionedSoftware
 
     public string | int | null $patchMinor = null;
 
+    #[Override]
     public function toVersion(): string
     {
         return $this->formatVersion($this->major, $this->minor, $this->patch, $this->patchMinor);

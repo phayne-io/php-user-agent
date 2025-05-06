@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Phayne\UAParser\Result;
 
+use Override;
+
 /**
  * Class AbstractSoftware
  *
@@ -21,6 +23,7 @@ abstract class AbstractSoftware extends AbstractClient
 {
     public string $family = 'Other';
 
+    #[Override]
     public function toString(): string
     {
         return $this->family;
